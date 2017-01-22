@@ -23,7 +23,7 @@
       <div class="nav navbar-nav navbar-right" style="padding: 0 15px;">
         <form class="navbar-form navbar-left" role="search" (ngSubmit)="search()">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
+            <input type="text" class="form-control" placeholder="Search" [(ngModel)]="query" [ngModelOptions]="{standalone: true}">
           </div>
           <button type="submit" class="btn btn-link"><i class="fa fa-search" aria-hidden="true"></i></button>
         </form>
