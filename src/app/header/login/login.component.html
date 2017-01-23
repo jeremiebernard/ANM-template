@@ -1,0 +1,30 @@
+<div class="modal fade center" #loginModal="bs-modal" bsModal>
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">Sign in</h4>
+        <button type="button" class="close pull-right" (click)="loginModal.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="login()">
+          <div class="form-group">
+            <label for="login">Login</label>
+            <input id="login" type="email" class="form-control" placeholder="Login">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input id="password" type="password" class="form-control" placeholder="Password">
+          </div>
+          <div class="text-right">
+            <button type="submit" class="btn btn-primary">Sign in</button>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        No account yet? <a [routerLink]="['/signup']">Create an account.</a>
+      </div>
+    </div>
+  </div>
+</div>

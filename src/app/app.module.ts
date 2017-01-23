@@ -5,25 +5,29 @@ import { HttpModule } from '@angular/http';
 import { routing } from './app.routes';
 
 import { AlertModule } from 'ng2-bootstrap';
+import { ModalModule } from 'ng2-bootstrap/modal';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { PostsComponent } from './posts/posts.component';
 import { SearchComponent } from './search/search.component';
+import { LoginComponent } from './header/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     PostsComponent,
-    SearchComponent
+    SearchComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     routing,
-    AlertModule.forRoot()
+    AlertModule.forRoot(),
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

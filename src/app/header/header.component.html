@@ -20,14 +20,14 @@
         <li [routerLinkActive]="['active']"><a [routerLink]="['/trending']">Trending</a></li>
         <li [routerLinkActive]="['active']"><a [routerLink]="['/fresh']">Fresh</a></li>
       </ul>
-      <div class="nav navbar-nav navbar-right" style="padding: 0 15px;">
+      <div class="nav navbar-right">
         <form class="navbar-form navbar-left" role="search" (ngSubmit)="search()">
           <div class="form-group">
             <input type="text" class="form-control" placeholder="Search" [(ngModel)]="query" [ngModelOptions]="{standalone: true}">
           </div>
           <button type="submit" class="btn btn-link"><i class="fa fa-search" aria-hidden="true"></i></button>
         </form>
-        <a class="btn btn-default navbar-btn" [routerLink]="['/']">Log in</a>
+        <button class="btn btn-default navbar-btn" (click)="loginModal.show()">Sign in</button>
         <a class="btn btn-primary navbar-btn" [routerLink]="['/']">Sign up</a>
       </div>
     </div>
@@ -35,3 +35,4 @@
   </div>
   <!-- /.container -->
 </nav>
+<app-login #loginModal="child"></app-login>

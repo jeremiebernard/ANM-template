@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
 import { Router } from '@angular/router';
+
+import { LoginComponent } from './login/login.component';
 
 @Component({
   selector: 'app-header',
@@ -16,12 +17,8 @@ export class HeaderComponent implements OnInit {
   }
 
   search() {
-    if(this.query != undefined){
-      this.router.navigate([`search/${this.query}`]);
-    } else {
-      this.router.navigate(['search']);
-    }
-    this.query = "";
+    this.router.navigate([`search/${this.query ? this.query : ''}`]);
+    this.query = '';
   }
 
 }
