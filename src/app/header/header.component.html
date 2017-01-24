@@ -22,7 +22,12 @@
       </ul>
       <div class="nav navbar-right">
         <form class="navbar-form navbar-left" role="search" (ngSubmit)="search()">
-          <input type="text" class="form-control" placeholder="Type to search..." [(ngModel)]="query" [ngModelOptions]="{standalone: true}">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Type to search..." [(ngModel)]="query" [ngModelOptions]="{standalone: true}">
+            <span class="input-group-btn">
+              <button type="submit" class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </span>
+          </div>
         </form>
         <button class="btn btn-default navbar-btn" (click)="loginModal.show()">Sign in</button>
         <a class="btn btn-primary navbar-btn" [routerLink]="['/']">Sign up</a>

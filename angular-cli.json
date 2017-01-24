@@ -20,9 +20,11 @@
       "styles": [
         "styles.scss",
         "../node_modules/bootstrap/dist/css/bootstrap.min.css",
-        "assets/font-awesome/css/font-awesome.min.css"
+        "../node_modules/bootstrap/dist/css/bootstrap-theme.min.css",
+        "../bower_components/font-awesome/css/font-awesome.min.css"
       ],
       "scripts": [
+        "../bower_components/jquery/dist/jquery.min.js",
         "../node_modules/bootstrap/dist/js/bootstrap.min.js"
       ],
       "environments": {

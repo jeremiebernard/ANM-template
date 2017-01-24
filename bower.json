@@ -1,0 +1,21 @@
+{
+  "name": "mean-template",
+  "authors": [
+    "jeremiebernard <jeremie71000@hotmail.fr>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "src/index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "font-awesome": "^4.7.0"
+  }
+}
