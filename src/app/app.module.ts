@@ -12,6 +12,7 @@ import { HeaderComponent } from './header/header.component';
 import { PostsComponent } from './posts/posts.component';
 import { SearchComponent } from './search/search.component';
 import { LoginComponent } from './header/login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { LoginComponent } from './header/login/login.component';
     HeaderComponent,
     PostsComponent,
     SearchComponent,
-    LoginComponent
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
