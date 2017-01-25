@@ -15,9 +15,10 @@ export class SearchComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.query = params['query'] ? params['query'] : '';
     });
+
+    this.search();
   }
 
   search() {
-
   }
 }

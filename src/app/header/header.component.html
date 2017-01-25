@@ -30,7 +30,7 @@
           </div>
         </form>
         <button class="btn btn-default navbar-btn" (click)="loginModal.show()">Sign in</button>
-        <a class="btn btn-primary navbar-btn" [routerLink]="['/']">Sign up</a>
+        <button class="btn btn-primary navbar-btn" (click)="signupModal.show()">Sign up</button>
       </div>
     </div>
     <!-- /.navbar-collapse -->
@@ -38,3 +38,4 @@
   <!-- /.container -->
 </nav>
 <app-login #loginModal="child"></app-login>
+<app-signup #signupModal="child"></app-signup>

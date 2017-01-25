@@ -14,12 +14,12 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  show() {
-    this.loginModal.show();
+  login() {
+    this.loginModal.hide();
   }
 
-  login() {
-
+  show() {
+    this.loginModal.show();
   }
 
 }

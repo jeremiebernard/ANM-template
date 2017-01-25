@@ -1,6 +1,10 @@
 <form class="form-inline" role="search" (ngSubmit)="search()">
   <div class="form-group">
-    <input type="text" class="form-control" placeholder="Search" [(ngModel)]="query" [ngModelOptions]="{standalone: true}">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Type to search..." [(ngModel)]="query" [ngModelOptions]="{standalone: true}">
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i></button>
+      </span>
+    </div>
   </div>
-  <button type="submit" class="btn btn-link"><i class="fa fa-search" aria-hidden="true"></i></button>
 </form>
