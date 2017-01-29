@@ -1,3 +1,20 @@
-<p>
-  posts works!
-</p>
+<div *ngIf="posts">
+  <ol>
+    <li *ngFor="let post of posts">
+      <a [routerLink]="['/posts', post.id]" target="_blank">
+        <h4>{{post.title}}</h4>
+      </a>
+      <hr>
+    </li>
+  </ol>
+  <nav>
+    <ul class="pager">
+      <li [ngClass]="{disabled: page == 1}">
+        <a [routerLink]="['/' + postsType, page - 1]"><span aria-hidden="true">&larr;</span>&nbsp;Previous</a>
+      </li>
+      <li>
+        <a [routerLink]="['/' + postsType, page + 1]">Next&nbsp;<span aria-hidden="true">&rarr;</span></a>
+      </li>
+    </ul>
+  </nav>
+</div>

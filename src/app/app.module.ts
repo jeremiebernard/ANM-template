@@ -7,12 +7,17 @@ import { routing } from './app.routes';
 import { AlertModule } from 'ng2-bootstrap/alert';
 import { ModalModule } from 'ng2-bootstrap/modal';
 
+import { PostsService } from './api/posts.service';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { PostsComponent } from './posts/posts.component';
 import { SearchComponent } from './search/search.component';
 import { LoginComponent } from './header/login/login.component';
 import { SignupComponent } from './header/signup/signup.component';
+import { PostDetailComponent } from './posts/post-detail/post-detail.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +26,10 @@ import { SignupComponent } from './header/signup/signup.component';
     PostsComponent,
     SearchComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    PostDetailComponent,
+    PageNotFoundComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +39,7 @@ import { SignupComponent } from './header/signup/signup.component';
     AlertModule.forRoot(),
     ModalModule.forRoot()
   ],
-  providers: [],
+  providers: [PostsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
