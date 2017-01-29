@@ -7,12 +7,10 @@ import 'rxjs/add/operator/map';
 export class PostsService {
   baseUrl: string;
 
-  constructor(private http: Http) {
-    this.baseUrl = 'http://localhost:3000/api';
-  }
+  constructor(private http: Http) { }
 
   fetchPosts(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/posts`)
+    return this.http.get('/api/posts')
       .map(response => response.json());
   }
 
