@@ -5,13 +5,15 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class PostsService {
-  baseUrl: string;
 
   constructor(private http: Http) { }
 
   fetchPosts(): Observable<any> {
-    return this.http.get('/api/posts')
-      .map(response => response.json());
+    return this.http.get('/api/posts').map(response => response.json());
+  }
+
+  fetchPostById(id: number): Observable<any> {
+    return this.http.get(`/api/posts/${id}`).map(response => response.json());
   }
 
 }

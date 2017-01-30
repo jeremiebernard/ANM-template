@@ -1,4 +1,4 @@
-body { 
+body {
   padding-top: 70px;
 }
 
@@ -13,14 +13,13 @@ a {
 .modal {
   text-align: center;
   padding: 0!important;
-}
-
-.modal:before {
-  content: '';
-  display: inline-block;
-  height: 100%;
-  vertical-align: middle;
-  margin-right: -4px;
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -4px;
+  }
 }
 
 .modal-dialog {
