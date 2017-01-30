@@ -13,9 +13,7 @@ const routes: Routes = [
     { path: 'hot/:page', component: PostsComponent, data: { postsType: 'hot' } },
     { path: 'trending/:page', component: PostsComponent, data: { postsType: 'trending' } },
     { path: 'fresh/:page', component: PostsComponent, data: { postsType: 'fresh' } },
-    { path: 'posts', redirectTo: '/hot/1', pathMatch: 'full' },
-    { path: 'posts/:page', redirectTo: '/hot/:page', pathMatch: 'full' },
-    { path: 'posts/:id', component: PostDetailComponent },
+    { path: 'post/:id', component: PostDetailComponent },
     { path: 'search', component: SearchComponent },
     { path: 'search/:query', component: SearchComponent },
     { path: '**', component: PageNotFoundComponent, pathMatch: 'full' }

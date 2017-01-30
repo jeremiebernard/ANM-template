@@ -1,12 +1,10 @@
 <div *ngIf="posts">
-  <ol>
-    <li *ngFor="let post of posts">
-      <a [routerLink]="['/posts', post.id]" target="_blank">
-        <h4>{{post.title}}</h4>
-      </a>
-      <hr>
-    </li>
-  </ol>
+  <div class="posts" *ngFor="let post of posts">
+    <a [routerLink]="['/post', post.id]" target="_blank">
+      <h4>{{post.title}}</h4>
+    </a>
+    <hr>
+  </div>
   <nav>
     <ul class="pager">
       <li [ngClass]="{disabled: page == 1}">
