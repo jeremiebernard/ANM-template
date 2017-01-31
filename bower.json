@@ -1,10 +1,10 @@
 {
   "name": "mean-template",
   "authors": [
-    "jeremiebernard <jeremie71000@hotmail.fr>"
+    "Jérémie Bernard <jeremie.bernard@etu.univ-lyon1.fr>"
   ],
-  "description": "",
-  "main": "",
+  "description": "A MEAN (MongoDB, Express, Angular2, NodeJS) template for full stack JavaScript applications.",
+  "main": "main.ts",
   "license": "MIT",
   "homepage": "src/index.html",
   "ignore": [
