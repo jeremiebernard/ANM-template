@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { PostsService } from '../api/posts.service';
+import { PostsService } from '../services/api/posts.service';
 
 @Component({
   selector: 'app-posts',
@@ -9,22 +9,26 @@ import { PostsService } from '../api/posts.service';
   styleUrls: ['./posts.component.scss']
 })
 export class PostsComponent implements OnInit {
-  posts;
+  postsType: any;
   page: number;
-  postsType;
+  posts: any;
+  error: string;
 
   constructor(private route: ActivatedRoute, private postsService: PostsService) { }
 
   ngOnInit() {
     this.route.data.subscribe(data => this.postsType = (data as any).postsType);
-    
+
     this.route.params.subscribe(params => {
       this.page = params['page'] ? params['page'] : 1;
     });
 
     this.postsService.fetchPosts().subscribe(
       posts => this.posts = posts,
-      error => console.log('Error fetching posts')
+      error => {
+        this.error = 'Error fetching posts';
+        console.log(error);
+      }
     );
   }
 

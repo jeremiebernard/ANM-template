@@ -16,3 +16,9 @@
     </ul>
   </nav>
 </div>
+<div *ngIf="error">
+  <h4>{{error}}</h4>
+</div>
+<div *ngIf="!posts && !error">
+  <h4>Loading...</h4>
+</div>

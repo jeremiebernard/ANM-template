@@ -5,6 +5,8 @@ import { PostsComponent } from './posts/posts.component';
 import { PostDetailComponent } from './posts/post-detail/post-detail.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
+import { AuthGuard } from './guards/auth.guard';
+
 const routes: Routes = [
     { path: '', redirectTo: '/hot/1', pathMatch: 'full' },
     { path: 'hot', redirectTo: '/hot/1' },

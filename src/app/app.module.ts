@@ -7,7 +7,8 @@ import { routing } from './app.routes';
 import { AlertModule } from 'ng2-bootstrap/alert';
 import { ModalModule } from 'ng2-bootstrap/modal';
 
-import { PostsService } from './api/posts.service';
+import { PostsService } from './services/api/posts.service';
+import { AuthentificationService } from './services/authentification.service';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -39,7 +40,7 @@ import { FooterComponent } from './footer/footer.component';
     AlertModule.forRoot(),
     ModalModule.forRoot()
   ],
-  providers: [PostsService],
+  providers: [PostsService, AuthentificationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
