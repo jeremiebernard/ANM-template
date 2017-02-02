@@ -3,13 +3,15 @@ import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
+import { IApiService } from './IApiService';
+
 @Injectable()
-export class PostsService {
+export class PostsService extends IApiService {
   baseUrl: string;
 
   constructor(private http: Http) {
-    this.baseUrl = 'http://localhost:3000/api';
-   }
+    super();
+  }
 
   fetchPosts(): Observable<any> {
     return this.http.get(`${this.baseUrl}/posts`).map(response => response.json());

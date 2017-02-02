@@ -8,26 +8,20 @@
         </button>
       </div>
       <div class="modal-body">
-        <form (ngSubmit)="signup()">
+        <form #form="ngForm" (ngSubmit)="signup()">
           <div class="form-group">
             <label for="username">Username</label>
-            <input id="username" type="text" class="form-control" placeholder="Username" required>
+            <input id="username" type="text" class="form-control" placeholder="Username" [(ngModel)]="user.username" name="username"
+              required>
           </div>
           <div class="form-group">
             <label for="email">Email</label>
-            <input id="email" type="email" class="form-control" placeholder="Email" required>
-          </div>
-          <div class="form-group">
-            <label for="confirmemail">Confirm email</label>
-            <input id="confirmemail" type="email" class="form-control" placeholder="Confirm email" required>
+            <input id="email" type="email" class="form-control" placeholder="Email" [(ngModel)]="user.email" name="email" required>
           </div>
           <div class="form-group">
             <label for="password">Password</label>
-            <input id="password" type="password" class="form-control" placeholder="Password" required>
-          </div>
-          <div class="form-group">
-            <label for="confirmpassword">Confirm password</label>
-            <input id="confirmpassword" type="password" class="form-control" placeholder="Confirm password" required>
+            <input id="password" type="password" class="form-control" placeholder="Password" [(ngModel)]="user.password" name="password"
+              required>
           </div>
           <div class="text-right">
             <button type="submit" class="btn btn-primary">Sign up</button>

@@ -8,6 +8,7 @@ import { AlertModule } from 'ng2-bootstrap/alert';
 import { ModalModule } from 'ng2-bootstrap/modal';
 
 import { PostsService } from './services/api/posts.service';
+import { RegisterService } from './services/api/register.service';
 import { AuthentificationService } from './services/authentification.service';
 
 import { AppComponent } from './app.component';
@@ -40,7 +41,7 @@ import { FooterComponent } from './footer/footer.component';
     AlertModule.forRoot(),
     ModalModule.forRoot()
   ],
-  providers: [PostsService, AuthentificationService],
+  providers: [PostsService, RegisterService, AuthentificationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

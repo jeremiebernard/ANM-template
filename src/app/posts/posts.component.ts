@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AlertModule } from 'ng2-bootstrap/alert';
 
 import { PostsService } from '../services/api/posts.service';
 
@@ -25,10 +26,7 @@ export class PostsComponent implements OnInit {
 
     this.postsService.fetchPosts().subscribe(
       posts => this.posts = posts,
-      error => {
-        this.error = 'Error fetching posts';
-        console.log(error);
-      }
+      error => this.error = error
     );
   }
 
