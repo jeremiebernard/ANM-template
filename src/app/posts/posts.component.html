@@ -1,9 +1,9 @@
 <div *ngIf="!posts && !error">
-  <i class="fa fa-3x fa-spin fa-spinner" aria-hidden="true"></i>
+  <i class="fa fa-2x fa-spin fa-spinner" aria-hidden="true"></i>
 </div>
 <div *ngIf="error">
   <alert type="danger">
-    <strong>Error fetching posts!</strong> {{error}}
+    <strong>Error fetching posts!</strong> {{error}}. <a (click)="reload()">Try again</a>.
   </alert>
 </div>
 <div *ngIf="posts">

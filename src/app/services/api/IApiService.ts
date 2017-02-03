@@ -1,7 +1,5 @@
 export class IApiService {
-  baseUrl: string;
+  baseUrl: string = 'http://localhost:3000/api';
 
-  constructor() {
-    this.baseUrl = 'http://localhost:3000/api';
-  }
+  constructor() { }
 }

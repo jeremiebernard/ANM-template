@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -8,17 +8,15 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" [routerLink]="['/']">
-        <img alt="9GAG" height="20" src="../assets/img/header-logo.png">
-      </a>
+        </button>
+        <a class="navbar-brand" [routerLink]="['/']">
+          <img alt="logo" height="20" src="../assets/img/header-logo.png">
+        </a>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li [routerLinkActive]="['active']"><a [routerLink]="['/hot']">Hot</a></li>
-        <li [routerLinkActive]="['active']"><a [routerLink]="['/trending']">Trending</a></li>
-        <li [routerLinkActive]="['active']"><a [routerLink]="['/fresh']">Fresh</a></li>
+        <li [routerLinkActive]="['active']"><a [routerLink]="['/posts']">Posts</a></li>
       </ul>
       <div class="nav navbar-right">
         <form class="navbar-form navbar-left" role="search" (ngSubmit)="search()">
@@ -29,13 +27,104 @@
             </span>
           </div>
         </form>
-        <button class="btn btn-default navbar-btn" (click)="loginModal.show()">Sign in</button>
-        <button class="btn btn-primary navbar-btn" (click)="signupModal.show()">Sign up</button>
+        <button class="btn btn-default navbar-btn" (click)="loginModal.show()">Login</button>
+        <button class="btn btn-primary navbar-btn" (click)="registerModal.show()">Sign up</button>
       </div>
     </div>
     <!-- /.navbar-collapse -->
   </div>
   <!-- /.container -->
 </nav>
-<app-login #loginModal="child"></app-login>
-<app-signup #signupModal="child"></app-signup>
+
+<!-- Login Modal -->
+<div class="modal fade center" #loginModal="bs-modal" bsModal>
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">Login</h4>
+        <button type="button" class="close pull-right" (click)="loginModal.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="login()">
+          <div class="form-group">
+            <span class="help-block">Login with your email address</span>
+            <label for="email">Email</label>
+            <input id="email" type="email" class="form-control" placeholder="Email" required autofocus>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input id="password" type="password" class="form-control" placeholder="Password" required>
+          </div>
+          <div class="checkbox">
+            <label>
+              &nbsp;<input type="checkbox"> Remember me
+            </label>
+          </div>
+          <div class="text-right">
+            <button type="submit" class="btn btn-primary">Login</button>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        No account yet? <a (click)="loginModal.hide(); registerModal.show()">Create an account</a>.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Register Modal -->
+<div class="modal fade center" #registerModal="bs-modal" bsModal>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">Join us</h4>
+        <button type="button" class="close pull-right" (click)="registerModal.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #form="ngForm" (ngSubmit)="register()">
+          <span class="help-block">By clicking on 'Sign up', you confirm that you accept the <a>Terms of use</a>.</span>
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input id="username" type="text" class="form-control" placeholder="Username" [(ngModel)]="newUser.username" name="username"
+              required autofocus>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input id="password" type="password" class="form-control" placeholder="Password" [(ngModel)]="newUser.password" name="password"
+              required>
+          </div>
+          <div class="form-group">
+            <label for="confrimpassword">Confirm password</label>
+            <input id="confrimpassword" type="password" class="form-control" placeholder="Confrim password" [(ngModel)]="newUser.confrimpassword"
+              name="confrimpassword" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" type="email" class="form-control" placeholder="Email" [(ngModel)]="newUser.email" name="email" required>
+          </div>
+          <div *ngIf="registerSuccess">
+            <alert type="success">
+              <strong>Account created!</strong> Your account has been created with success.
+            </alert>
+          </div>
+          <div *ngIf="registerError">
+            <alert type="danger">
+              <strong>Error while creating your account!</strong> {{registerError}}
+            </alert>
+          </div>
+          <div class="text-right">
+            <i class="fa fa-spin fa-spinner" aria-hidden="true" *ngIf="registerLoading"></i>&nbsp;
+            <button type="submit" class="btn btn-primary" [ngClass]="{disabled: registerLoading}">Sign up</button>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        Already have an account? <a (click)="registerModal.hide(); loginModal.show()">Login</a>.
+      </div>
+    </div>
+  </div>
+</div>

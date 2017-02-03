@@ -8,13 +8,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
-    { path: '', redirectTo: '/hot/1', pathMatch: 'full' },
-    { path: 'hot', redirectTo: '/hot/1' },
-    { path: 'trending', redirectTo: '/trending/1' },
-    { path: 'fresh', redirectTo: '/fresh/1' },
-    { path: 'hot/:page', component: PostsComponent, data: { postsType: 'hot' } },
-    { path: 'trending/:page', component: PostsComponent, data: { postsType: 'trending' } },
-    { path: 'fresh/:page', component: PostsComponent, data: { postsType: 'fresh' } },
+    { path: '', redirectTo: '/posts/1', pathMatch: 'full' },
+    { path: 'posts', redirectTo: '/posts/1', pathMatch: 'full' },
+    { path: 'posts/:page', component: PostsComponent },
     { path: 'post/:id', component: PostDetailComponent },
     { path: 'search', component: SearchComponent },
     { path: 'search/:query', component: SearchComponent },
